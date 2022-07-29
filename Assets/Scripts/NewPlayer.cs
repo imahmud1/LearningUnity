@@ -50,7 +50,7 @@ public class NewPlayer : PhysicsObject
         }
 
         //Game reset
-        if(transform.position.y < -23f )
+        if(transform.position.y < -23f || health <= 0)
         {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 transform.position = new Vector3(0, 10f, 0);
