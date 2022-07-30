@@ -91,6 +91,27 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Point
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 343
+      y: 4042
+      width: 27
+      height: 27
+    spriteID: 4acdc27e1ebea9b42acacc711af4705e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2258, y: 2635}
   - name: sword
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -280,7 +301,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -1336, y: 2567}
-  - name: Ground1
+  - name: Ground2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -300,7 +321,28 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1166, y: 1265}
+    uvTransform: {x: -1726, y: 1321}
+  - name: Ground1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 992
+      y: 2172
+      width: 459
+      height: 459
+    spriteID: 3880e9df6e1a70a48bf5e92a5152ec57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -698, y: 1321}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -352,6 +394,16 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Point
+    spriteName: Point
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4acdc27e1ebea9b42acacc711af4705e
+    layerID: 53
+    mosaicPosition: {x: 343, y: 4042}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: sword
     spriteName: sword
     isGroup: 0
@@ -442,13 +494,23 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Ground1
-    spriteName: Ground1
+  - name: Ground2
+    spriteName: Ground2
     isGroup: 0
     parentIndex: -1
     spriteID: fbab14e1fcb2cea4991188b325193ee5
     layerID: 3
     mosaicPosition: {x: 525, y: 2172}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ground1
+    spriteName: Ground1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3880e9df6e1a70a48bf5e92a5152ec57
+    layerID: 52
+    mosaicPosition: {x: 992, y: 2172}
     flatten: 0
     isImported: 1
     isVisible: 1

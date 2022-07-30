@@ -63,8 +63,7 @@ public class NewPlayer : PhysicsObject
         //Game reset
         if(transform.position.y < -23f || health <= 0)
         {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                transform.position = new Vector3(0, 10f, 0);
+            Die();
         }
 
         if(Input.GetButtonDown("Fire1"))
@@ -97,4 +96,10 @@ public class NewPlayer : PhysicsObject
         inventory.Remove(inventoryName);
         inventoryItemImage.sprite = inventoryItemBlank;
     }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

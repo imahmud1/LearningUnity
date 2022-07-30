@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1186995628193175528}
   - component: {fileID: 1677766540}
   - component: {fileID: 1677766541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  inventoryStringName: 
+  inventorySprite: {fileID: 0}
