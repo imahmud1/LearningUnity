@@ -8,12 +8,14 @@ public class NewPlayer : PhysicsObject
 {
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float jumpax = 1f;
+    [SerializeField] private GameObject attackBox;
     public int health = 50;
     private int maxHealth = 100;
     public int coinsCollected = 0;
     public Text coinsText;
     public Image healthBar;
     private Vector2 healthBarOrigSize;
+    public int attackPower = 25;
 
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
     public Image inventoryItemImage;
@@ -37,11 +39,20 @@ public class NewPlayer : PhysicsObject
         UpdateUI();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Movement
         targetVelocity = new Vector2(Input.GetAxis("Horizontal"), 0)* maxSpeed;
+        
+        //Left right change
+        if(targetVelocity.x < -.01)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else if(targetVelocity.x > .01)
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
 
         //Jump
         if(Input.GetButtonDown("Jump") && grounded)
@@ -55,6 +66,18 @@ public class NewPlayer : PhysicsObject
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 transform.position = new Vector3(0, 10f, 0);
         }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(ActivateAttack());
+        }
+    }
+
+    public IEnumerator ActivateAttack()
+    {
+        attackBox.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        attackBox.SetActive(false);
     }
 
     public void UpdateUI()

@@ -7,6 +7,8 @@ public class Enemy : PhysicsObject
     [SerializeField] private float maxspeed;
     private int direction = 1;
     [SerializeField] private int hurtPower;
+    public int health = 100;
+    private int maxHealth = 100;
 
 
     private RaycastHit2D rightLedgeRaycastHit;
@@ -55,6 +57,11 @@ public class Enemy : PhysicsObject
         {
             Debug.Log("Oh No!");
             direction = 1;
+        }
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
