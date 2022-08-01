@@ -24,6 +24,8 @@ public class SceneLoadTrigger : MonoBehaviour
         {
             SceneManager.LoadScene(loadSceneString);
             Debug.Log(loadSceneString);
+            //NewPlayer.Instance.SetSpawnPosition();
         }
+        
     }
 }

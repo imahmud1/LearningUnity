@@ -12,13 +12,9 @@ public class NewPlayer : PhysicsObject
     public int health = 50;
     private int maxHealth = 100;
     public int coinsCollected = 0;
-    public Text coinsText;
-    public Image healthBar;
     private Vector2 healthBarOrigSize;
     public int attackPower = 25;
-
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
-    public Image inventoryItemImage;
     public Sprite keySprite;
     public Sprite inventoryItemBlank;
 
@@ -31,12 +27,22 @@ public class NewPlayer : PhysicsObject
             return instance;
         }
     }
+
+
+
+    private void Awake()
+    {
+        if (GameObject.Find("New Player")) Destroy(gameObject);
+    }
+
     void Start()
     {
-        coinsText = GameObject.Find("Score").GetComponent<Text>();
-        healthBar = GameObject.Find("Health Bar").GetComponent<Image>();
-        healthBarOrigSize = healthBar.rectTransform.sizeDelta;
+        healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         UpdateUI();
+        DontDestroyOnLoad(gameObject);
+        gameObject.name = "New Player";
+        SetSpawnPosition();
+        
     }
 
     void Update()
@@ -72,6 +78,11 @@ public class NewPlayer : PhysicsObject
         }
     }
 
+    public void SetSpawnPosition()
+    {
+        transform.position = GameObject.Find("Spawn Location").transform.position;
+    }
+
     public IEnumerator ActivateAttack()
     {
         attackBox.SetActive(true);
@@ -81,20 +92,20 @@ public class NewPlayer : PhysicsObject
 
     public void UpdateUI()
     {
-        coinsText.text = "Coins: " + coinsCollected.ToString();
-        healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), healthBar.rectTransform.sizeDelta.y);
+        GameManager.Instance.coinsText.text = "Coins: " + coinsCollected.ToString();
+        GameManager.Instance.healthBar.rectTransform.sizeDelta = new Vector2(healthBarOrigSize.x * ((float)health / (float)maxHealth), GameManager.Instance.healthBar.rectTransform.sizeDelta.y);
     }
 
     public void AddInventoryItem(string inventoryName, Sprite image = null)
     {
         inventory.Add(inventoryName, image);
-        inventoryItemImage.sprite = inventory[inventoryName];
+        GameManager.Instance.inventoryItemImage.sprite = inventory[inventoryName];
     }
 
     public void RemoveInventoryItem(string inventoryName)
     {
         inventory.Remove(inventoryName);
-        inventoryItemImage.sprite = inventoryItemBlank;
+        GameManager.Instance.inventoryItemImage.sprite = inventoryItemBlank;
     }
 
     public void Die()
