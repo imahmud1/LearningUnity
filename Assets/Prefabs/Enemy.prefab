@@ -75,13 +75,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -3492284359852795356, guid: 0655fc58c6f5d4649b5623ea19955496, type: 3}
-  m_Color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
+  m_SortingOrder: 12
+  m_Sprite: {fileID: 390202150324297381, guid: 02215feee33f2f743943436d39a4647c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.09, y: 0.97}
+  m_Size: {x: 0.84, y: 0.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,9 +100,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.27, y: 1.41}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.000000029802322}
+  m_Size: {x: 1, y: 0.8}
+  m_Direction: 1
 --- !u!50 &8174310648956928228
 Rigidbody2D:
   serializedVersion: 4
