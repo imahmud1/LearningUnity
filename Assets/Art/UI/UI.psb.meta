@@ -98,11 +98,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3849
-      y: 158
-      width: 147
-      height: 147
-    spriteID: 1c478965595273a40a69b11a31c15bef
+      x: 3852
+      y: 159
+      width: 136
+      height: 144
+    spriteID: 1fdf058170e82a942b812943201eb55d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -253,8 +253,8 @@ ScriptedImporter:
     spriteName: Inventory Key
     isGroup: 0
     parentIndex: -1
-    spriteID: 1c478965595273a40a69b11a31c15bef
-    layerID: 7
+    spriteID: 1fdf058170e82a942b812943201eb55d
+    layerID: 12
     mosaicPosition: {x: 3852, y: 159}
     flatten: 0
     isImported: 1

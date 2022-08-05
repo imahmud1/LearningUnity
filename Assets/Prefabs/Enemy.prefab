@@ -142,7 +142,7 @@ MonoBehaviour:
   hurtPower: 15
   health: 100
   rayCastOffset: {x: 1, y: 0}
-  rayCastLength: 2
+  rayCastLength: 1
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 51

@@ -9,6 +9,7 @@ public class NewPlayer : PhysicsObject
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float jumpax = 1f;
     [SerializeField] private GameObject attackBox;
+    public Image inventoryItemImage;
     public int health = 50;
     private int maxHealth = 100;
     public int coinsCollected = 0;
@@ -99,18 +100,18 @@ public class NewPlayer : PhysicsObject
     public void AddInventoryItem(string inventoryName, Sprite image = null)
     {
         inventory.Add(inventoryName, image);
-        GameManager.Instance.inventoryItemImage.sprite = inventory[inventoryName];
+        inventoryItemImage.sprite = inventory[inventoryName];
     }
 
     public void RemoveInventoryItem(string inventoryName)
     {
         inventory.Remove(inventoryName);
-        GameManager.Instance.inventoryItemImage.sprite = inventoryItemBlank;
+        inventoryItemImage.sprite = inventoryItemBlank;
     }
 
     public void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

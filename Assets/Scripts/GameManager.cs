@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public Text coinsText;
     public Image healthBar;
-    public Image inventoryItemImage;
+    
 
 
 
