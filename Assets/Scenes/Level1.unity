@@ -13564,6 +13564,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1270892702, guid: 63e66b50427de6d40886f1e7993a8052, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1270892707}
+    - target: {fileID: 1270892702, guid: 63e66b50427de6d40886f1e7993a8052, type: 3}
       propertyPath: inventoryItemImage
       value: 
       objectReference: {fileID: 198322216}

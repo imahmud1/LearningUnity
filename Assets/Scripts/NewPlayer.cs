@@ -6,18 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class NewPlayer : PhysicsObject
 {
-    [SerializeField] private float maxSpeed = 1f;
-    [SerializeField] private float jumpax = 1f;
-    [SerializeField] private GameObject attackBox;
-    public Image inventoryItemImage;
+    [Header("Inventory")]
     public int health = 50;
     private int maxHealth = 100;
     public int coinsCollected = 0;
-    private Vector2 healthBarOrigSize;
+
+    [Header("Attribute")]
+    [SerializeField] private float maxSpeed = 1f;
+    [SerializeField] private float jumpax = 1f;
     public int attackPower = 25;
-    public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
+
+    [Header("Reference")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject attackBox;
+    public Image inventoryItemImage;
     public Sprite keySprite;
     public Sprite inventoryItemBlank;
+
+    private Vector2 healthBarOrigSize;
+    public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
+
 
     private static NewPlayer instance;
     public static NewPlayer Instance
@@ -77,6 +85,10 @@ public class NewPlayer : PhysicsObject
         {
             StartCoroutine(ActivateAttack());
         }
+
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed); 
+        animator.SetFloat("velocityY", velocity.y);
+        animator.SetBool("grounded", grounded);
     }
 
     public void SetSpawnPosition()
