@@ -32,14 +32,12 @@ public class Enemy : PhysicsObject
         Debug.DrawRay(new Vector2(transform.position.x + rayCastOffset.x, transform.position.y + rayCastOffset.y), Vector2.down * rayCastLength, Color.blue);
         if (rightLedgeRaycastHit.collider == null)
         {
-            Debug.Log("Oh No!");
             direction = -1;
         }
         rightWallRaycastHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.right, rayCastLength, raycastLayerMask);
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), Vector2.right * rayCastLength, Color.blue);
         if (rightWallRaycastHit.collider != null)
         {
-            Debug.Log("Oh No!");
             direction = -1;
         }
 
@@ -47,7 +45,6 @@ public class Enemy : PhysicsObject
         Debug.DrawRay(new Vector2(transform.position.x - rayCastOffset.x, transform.position.y + rayCastOffset.y), Vector2.down * rayCastLength, Color.green);
         if (lefttLedgeRaycastHit.collider == null)
         {
-            Debug.Log("Oh No!");
             direction = 1;
         }
 
@@ -55,7 +52,6 @@ public class Enemy : PhysicsObject
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), Vector2.left * rayCastLength, Color.green);
         if (leftWallRaycastHit.collider != null)
         {
-            Debug.Log("Oh No!");
             direction = 1;
         }
 
@@ -69,7 +65,6 @@ public class Enemy : PhysicsObject
     {
         if(collision.gameObject == NewPlayer.Instance.gameObject)
         {
-            Debug.Log("Hurting Player");
             NewPlayer.Instance.health -= hurtPower;
             NewPlayer.Instance.UpdateUI();
         }
